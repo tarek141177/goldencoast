@@ -24,7 +24,7 @@ const ContactSection = () => {
             {[
               { icon: MapPin, label: "Location", value: "Hurghada Marina, Red Sea, Egypt" },
               { icon: Phone, label: "Phone", value: "+20 111 423 6997", href: "https://wa.me/201114236997" },
-              { icon: Mail, label: "Email", value: "hello@goldencoastexcursions.com", href: "mailto:hello@goldencoastexcursions.com" },
+              { icon: Mail, label: "Email", value: "GoldenCoastexcursions1@gmail.com", href: "mailto:GoldenCoastexcursions1@gmail.com" },
               { icon: Clock, label: "Working Hours", value: "Daily: 7:00 AM - 10:00 PM" },
             ].map((item) => (
               <div key={item.label} className="flex items-start gap-4">
