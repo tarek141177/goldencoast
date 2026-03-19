@@ -1,4 +1,4 @@
-﻿import image1 from "@/assets/image1.jpg";
+import image1 from "@/assets/image1.jpg";
 import image2 from "@/assets/image2.jpg";
 import image3 from "@/assets/image3.jpg";
 import image4 from "@/assets/image4.jpg";
@@ -63,10 +63,10 @@ export const tours: Tour[] = [
   {
     slug: "wyspa-orange-top-vip-hurghada",
     image: image17,
-    title: "Orange Bay Hurghada â€“ Egyptian Maldives",
-    description: "Discover Orange Bay Hurghada â€“ a paradise beach known as the Egyptian Maldives! Cruise to Orange Island from Hurghada: snorkeling, VIP lunch, white sand, and turquoise water.",
-    seoTitle: "Orange Bay Hurghada â€“ Orange Island (Egypt) | Egyptian Maldives 2026",
-    seoDescription: "Discover Orange Bay Hurghada â€“ a paradise beach known as the Egyptian Maldives! Cruise to Orange Island from Hurghada: snorkeling, VIP lunch, white sand, and turquoise water. Book online!",
+    title: "Orange Bay Hurghada – Egyptian Maldives",
+    description: "Discover Orange Bay Hurghada – a paradise beach known as the Egyptian Maldives! Cruise to Orange Island from Hurghada: snorkeling, VIP lunch, white sand, and turquoise water.",
+    seoTitle: "Orange Bay Hurghada – Orange Island (Egypt) | Egyptian Maldives 2026",
+    seoDescription: "Discover Orange Bay Hurghada – a paradise beach known as the Egyptian Maldives! Cruise to Orange Island from Hurghada: snorkeling, VIP lunch, white sand, and turquoise water. Book online!",
     price: "From $28",
     duration: "Full day",
     groupSize: "Up to 25 people",

@@ -9,6 +9,19 @@
     <meta property="og:title" content="Golden Coast Excursions — Hurghada Tours & Excursions" />
     <meta property="og:description" content="Unforgettable tours from Hurghada. Desert safari, snorkeling, Cairo & Luxor day trips." />
     <meta property="og:type" content="website" />
+    <script>
+      // GitHub Pages SPA routing restore
+      (function(l) {
+        if (l.search[1] === 'p') {
+          var decoded = l.search.slice(1).split('&').map(function(s) {
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + (decoded.charAt(1) === '/' ? '' : '/') + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
   </head>
   <body>
     <div id="root"></div>
