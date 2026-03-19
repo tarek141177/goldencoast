@@ -43,7 +43,7 @@ export interface Tour {
 
 export const tours: Tour[] = [
   {
-    slug: "wyspa-paradise-top-vip-hurghada",
+    slug: "paradise-island-vip-hurghada",
     image: image8,
     title: "Paradise Island Top VIP",
     description: "This exclusive beach on Giftun Island is a true paradise. Sandy beach, turquoise water in Hurghada has been appreciated by tourists for a reason.",
@@ -61,7 +61,7 @@ export const tours: Tour[] = [
     notIncluded: ["Tips","island purchases","photos","transfer from distant regions (Sahl Hasheesh","El Gouna etc. +$)","optional scuba diving (Intro +$15)."]
   },
   {
-    slug: "wyspa-orange-top-vip-hurghada",
+    slug: "orange-bay-hurghada",
     image: image17,
     title: "Orange Bay Hurghada – Egyptian Maldives",
     description: "Discover Orange Bay Hurghada – a paradise beach known as the Egyptian Maldives! Cruise to Orange Island from Hurghada: snorkeling, VIP lunch, white sand, and turquoise water.",
@@ -79,7 +79,7 @@ export const tours: Tour[] = [
     notIncluded: ["Tips, drinks/ice cream bought on the island or from \"water supermarket\", photos from photographer.","Transfer from: El Gouna, Sahl Hasheesh, Makadi Bay (+$5/pp), Safaga (+$10/pp)."]
   },
   {
-    slug: "dom-delfinow-vip-hurghada",
+    slug: "dolphin-house-vip-hurghada",
     image: image10,
     title: "Dolphin House VIP",
     description: "The cruise to the dolphin house starts around nine o'clock. Then the driver picks you up from the hotel and takes you to the port where adventure awaits.",
@@ -97,7 +97,7 @@ export const tours: Tour[] = [
     notIncluded: ["Tips, photos/videos from photographer, snacks/ice cream from \"water supermarket\".","Transfer from: El Gouna, Sahl Hasheesh, Makadi Bay (+$5/pp), Safaga (+$10/pp)."]
   },
   {
-    slug: "nurkowanie-intro-hurghada",
+    slug: "intro-diving-hurghada",
     image: image9,
     title: "Intro Diving",
     description: "Hurghada is an excellent choice for people who love diving. Hot water, unforgettable views. Warm water, breathtaking reef views.",
@@ -151,7 +151,7 @@ export const tours: Tour[] = [
     notIncluded: ["Personal expenses","Tips"]
   },
   {
-    slug: "prywatna-wycieczka-lodzia-motorowa-vip-hurghada",
+    slug: "private-speedboat-vip-hurghada",
     image: image5,
     title: "Private VIP Speedboat Trip",
     description: "A luxury adventure at sea! A private speedboat trip in Hurghada is relaxation, adrenaline and beautiful views of the Red Sea.",
@@ -169,7 +169,7 @@ export const tours: Tour[] = [
     notIncluded: ["Personal expenses","Tips"]
   },
   {
-    slug: "nurkowanie-hurghada",
+    slug: "diving-hurghada",
     image: image3,
     title: "Diving Hurghada",
     description: "Join us for an unforgettable journey to the underwater world, where every dive is a new discovery waiting for you! Regardless of level.",
@@ -241,7 +241,7 @@ export const tours: Tour[] = [
     notIncluded: ["Personal expenses","Tips"]
   },
   {
-    slug: "zwiedzanie-el-gouna-city-tour-hurghada",
+    slug: "el-gouna-city-tour-hurghada",
     image: image22,
     title: "El Gouna City Tour",
     description: "Experience an amazing journey through El Gouna! Our City Tour guarantees magical moments and unique memories in the 'Egyptian Venice'.",
@@ -259,7 +259,7 @@ export const tours: Tour[] = [
     notIncluded: ["Tips","Food and drinks","Any additional expenses not mentioned in the program"]
   },
   {
-    slug: "quad-safari-rano-z-hurghady",
+    slug: "morning-quad-safari-hurghada",
     image: image2,
     title: "Morning Quad Safari",
     description: "Morning quads in Hurghada is the shortest desert trip. Tourists are picked up from the hotel by bus to the quad station around 8 am.",
@@ -277,7 +277,7 @@ export const tours: Tour[] = [
     notIncluded: ["Personal expenses","Tips"]
   },
   {
-    slug: "quad-safari-po-poludniu",
+    slug: "afternoon-quad-safari-hurghada",
     image: image7,
     title: "Afternoon Quad Safari",
     description: "Quad biking in the Sunset desert, camel riding and the opportunity to visit a Bedouin village at sunset.",
@@ -313,7 +313,7 @@ export const tours: Tour[] = [
     notIncluded: ["Personal expenses","Tips"]
   },
   {
-    slug: "zwiedzanie-hurghady-city-tour",
+    slug: "hurghada-city-tour",
     image: image14,
     title: "Hurghada City Tour",
     description: "Hurghada is a popular tourist city in Egypt, located on the Red Sea. Get to know the local culture, markets and mosque.",
@@ -331,7 +331,7 @@ export const tours: Tour[] = [
     notIncluded: ["Personal expenses","Tips"]
   },
   {
-    slug: "sindbad-okret-podwodny",
+    slug: "sindbad-submarine-hurghada",
     image: image20,
     title: "Sindbad Submarine",
     description: "Hurghada, located on the eastern coast of the Red Sea, is one of the most beautiful places for diving without getting wet.",
@@ -349,7 +349,7 @@ export const tours: Tour[] = [
     notIncluded: ["Personal expenses","Tips"]
   },
   {
-    slug: "jazda-konna-w-hurghadzie-private",
+    slug: "horse-riding-private-hurghada",
     image: image12,
     title: "Horse Riding Private",
     description: "Hurghada is a popular tourist destination in Egypt, offering many attractions, including horse riding in the desert or on the beach.",
@@ -367,7 +367,7 @@ export const tours: Tour[] = [
     notIncluded: ["Personal expenses","Tips"]
   },
   {
-    slug: "wycieczka-do-kairu-z-hurghady",
+    slug: "cairo-trip-from-hurghada",
     image: image19,
     title: "Cairo Trip from Hurghada",
     description: "For all lovers of ancient history. Here is a trip to Cairo from Hurghada, full of manifestations of the civilization of pharaohs and ancient nations. Pyramids, Sphinx, Egyptian Museum...",
@@ -385,7 +385,7 @@ export const tours: Tour[] = [
     notIncluded: ["Personal expenses","Tips"]
   },
   {
-    slug: "prywatna-wycieczka-do-kairu-i-starozytny-egipt-z-hurghady",
+    slug: "private-cairo-ancient-egypt-hurghada",
     image: image15,
     title: "Private Trip to Cairo & Ancient Egypt",
     description: "Pyramids of Giza, Sphinx, Egyptian Museum, Amr Ibn Al-Aas Mosque, Church of St. Sergius, Church of the Assumption.",
@@ -403,7 +403,7 @@ export const tours: Tour[] = [
     notIncluded: ["Personal expenses","Tips"]
   },
   {
-    slug: "prywatna-wycieczka-do-kairu-i-starozytnego-egiptu-samolotem",
+    slug: "private-cairo-trip-by-plane-hurghada",
     image: image16,
     title: "Private Cairo Trip by Plane",
     description: "Looking for the best way to explore Cairo and Ancient Egypt...",
@@ -421,7 +421,7 @@ export const tours: Tour[] = [
     notIncluded: ["Personal expenses","Tips"]
   },
   {
-    slug: "luksoru-z-dolina-krolow-z-hurghady",
+    slug: "luxor-valley-of-kings-hurghada",
     image: image18,
     title: "Luxor with Valley of the Kings",
     description: "Hurghada is a popular tourist destination, famous for its beautiful beaches, corals and heavenly coral reefs. One of the biggest attractions of this region of Egypt are trips to Luxor with the Valley of the Kings.",
