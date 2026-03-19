@@ -41,10 +41,10 @@ const Footer = () => (
         <div>
           <h4 className="font-semibold text-sm uppercase tracking-widest mb-4">Popular Tours</h4>
           <ul className="space-y-2.5 text-sm text-primary-foreground/80">
-            <li><a href="/tour/orange-island-vip" className="hover:text-primary-foreground transition-colors">Orange Island VIP</a></li>
-            <li><a href="/tour/dolphin-house-vip" className="hover:text-primary-foreground transition-colors">Dolphin House VIP</a></li>
-            <li><a href="/tour/cairo-trip" className="hover:text-primary-foreground transition-colors">Cairo Day Trip</a></li>
-            <li><a href="/tour/luxor-valley-of-kings" className="hover:text-primary-foreground transition-colors">Luxor & Valley of Kings</a></li>
+            <li><Link to="/tour/orange-bay-hurghada" className="hover:text-primary-foreground transition-colors">Orange Bay Island VIP</Link></li>
+            <li><Link to="/tour/dolphin-house-vip-hurghada" className="hover:text-primary-foreground transition-colors">Dolphin House VIP</Link></li>
+            <li><Link to="/tour/cairo-trip-from-hurghada" className="hover:text-primary-foreground transition-colors">Cairo Day Trip</Link></li>
+            <li><Link to="/tour/luxor-valley-of-kings-hurghada" className="hover:text-primary-foreground transition-colors">Luxor & Valley of Kings</Link></li>
           </ul>
         </div>
 
@@ -62,7 +62,7 @@ const Footer = () => (
             </li>
             <li className="flex items-center gap-2.5">
               <Mail size={16} className="shrink-0" />
-              <span>info@goldencoastexcursions.com</span>
+              <a href="mailto:GoldenCoastexcursions1@gmail.com" className="hover:text-primary-foreground transition-colors">GoldenCoastexcursions1@gmail.com</a>
             </li>
             <li className="flex items-center gap-2.5">
               <Clock size={16} className="shrink-0" />
