@@ -162,7 +162,16 @@ const TourDetail = () => {
                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-primary flex items-center justify-center text-primary-foreground text-xs font-semibold">
                       {i + 1}
                     </div>
-                    <p className="text-sm text-muted-foreground leading-relaxed pt-1.5">{step}</p>
+                    <div className="text-sm text-muted-foreground leading-relaxed pt-1.5">
+                      <ReactMarkdown
+                        components={{
+                          strong: ({ children }) => <strong className="font-semibold text-foreground">{children}</strong>,
+                          p: ({ children }) => <span className="block">{children}</span>,
+                        }}
+                      >
+                        {step}
+                      </ReactMarkdown>
+                    </div>
                   </div>
                 ))}
               </div>
