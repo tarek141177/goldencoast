@@ -1,4 +1,6 @@
-import { motion } from "framer-motion";
+import { useState, useEffect, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -49,6 +51,41 @@ const galleryImages = [
 ];
 
 const Gallery = () => {
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  const openLightbox = (index: number) => setLightboxIndex(index);
+  const closeLightbox = () => setLightboxIndex(null);
+
+  const goPrev = useCallback(() => {
+    setLightboxIndex((prev) =>
+      prev === null ? null : (prev - 1 + galleryImages.length) % galleryImages.length
+    );
+  }, []);
+
+  const goNext = useCallback(() => {
+    setLightboxIndex((prev) =>
+      prev === null ? null : (prev + 1) % galleryImages.length
+    );
+  }, []);
+
+  // Keyboard navigation
+  useEffect(() => {
+    if (lightboxIndex === null) return;
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "ArrowRight") goNext();
+      else if (e.key === "ArrowLeft") goPrev();
+      else if (e.key === "Escape") closeLightbox();
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [lightboxIndex, goNext, goPrev]);
+
+  // Prevent body scroll when lightbox is open
+  useEffect(() => {
+    document.body.style.overflow = lightboxIndex !== null ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [lightboxIndex]);
+
   return (
     <div className="min-h-screen flex flex-col pt-16">
       <Navbar />
@@ -65,11 +102,11 @@ const Gallery = () => {
                 Photo Gallery
               </h1>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Explore the beauty of our tours and destinations through our photo gallery.
-                Get inspired for your next adventure with Golden Coast Excursions.
+                Explore the beauty of our tours and destinations. Click any photo to view it in full size.
               </p>
             </motion.div>
 
+            {/* Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {galleryImages.map((img, index) => (
                 <motion.div
@@ -79,6 +116,8 @@ const Gallery = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: (index % 8) * 0.06 }}
                   className="relative aspect-square overflow-hidden rounded-lg group cursor-pointer"
+                  onClick={() => openLightbox(index)}
+                  id={`gallery-img-${index + 1}`}
                 >
                   <img
                     src={img.src}
@@ -86,7 +125,29 @@ const Gallery = () => {
                     className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                  {/* Hover overlay with zoom icon */}
+                  <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="36"
+                      height="36"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="white"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <circle cx="11" cy="11" r="8" />
+                      <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                      <line x1="11" y1="8" x2="11" y2="14" />
+                      <line x1="8" y1="11" x2="14" y2="11" />
+                    </svg>
+                  </div>
+                  {/* Image counter badge */}
+                  <div className="absolute bottom-2 right-2 bg-black/50 text-white text-xs px-2 py-0.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    {index + 1} / {galleryImages.length}
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -94,6 +155,88 @@ const Gallery = () => {
         </section>
       </main>
       <Footer />
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {lightboxIndex !== null && (
+          <motion.div
+            key="lightbox"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-[999] bg-black/95 flex items-center justify-center"
+            onClick={closeLightbox}
+          >
+            {/* Close button */}
+            <button
+              id="lightbox-close"
+              onClick={closeLightbox}
+              className="absolute top-4 right-4 z-10 text-white bg-white/10 hover:bg-white/25 rounded-full p-2 transition-colors"
+              aria-label="Close"
+            >
+              <X size={28} />
+            </button>
+
+            {/* Counter */}
+            <div className="absolute top-4 left-1/2 -translate-x-1/2 text-white/70 text-sm font-medium bg-white/10 px-4 py-1.5 rounded-full">
+              {lightboxIndex + 1} / {galleryImages.length}
+            </div>
+
+            {/* Prev button */}
+            <button
+              id="lightbox-prev"
+              onClick={(e) => { e.stopPropagation(); goPrev(); }}
+              className="absolute left-3 md:left-6 text-white bg-white/10 hover:bg-white/25 rounded-full p-3 transition-colors z-10"
+              aria-label="Previous image"
+            >
+              <ChevronLeft size={32} />
+            </button>
+
+            {/* Image */}
+            <motion.div
+              key={lightboxIndex}
+              initial={{ opacity: 0, scale: 0.92 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.92 }}
+              transition={{ duration: 0.25 }}
+              className="max-w-[90vw] max-h-[90vh] flex items-center justify-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src={galleryImages[lightboxIndex].src}
+                alt={galleryImages[lightboxIndex].alt}
+                className="max-w-full max-h-[88vh] object-contain rounded-lg shadow-2xl"
+              />
+            </motion.div>
+
+            {/* Next button */}
+            <button
+              id="lightbox-next"
+              onClick={(e) => { e.stopPropagation(); goNext(); }}
+              className="absolute right-3 md:right-6 text-white bg-white/10 hover:bg-white/25 rounded-full p-3 transition-colors z-10"
+              aria-label="Next image"
+            >
+              <ChevronRight size={32} />
+            </button>
+
+            {/* Thumbnail strip */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 px-4 max-w-[95vw] overflow-x-auto pb-1">
+              {galleryImages.map((img, i) => (
+                <button
+                  key={i}
+                  onClick={(e) => { e.stopPropagation(); setLightboxIndex(i); }}
+                  className={`flex-shrink-0 w-12 h-12 rounded overflow-hidden border-2 transition-all duration-200 ${
+                    i === lightboxIndex ? "border-white scale-110" : "border-transparent opacity-50 hover:opacity-80"
+                  }`}
+                >
+                  <img src={img.src} alt="" className="w-full h-full object-cover" />
+                </button>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
