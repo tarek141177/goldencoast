@@ -5,6 +5,7 @@ import { getTourBySlug } from "@/data/tours";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ReactMarkdown from "react-markdown";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 // Fix malformed markdown like "** Text:**" or "* Text" with extra spaces
 const preprocessMarkdown = (text: string): string => {
@@ -20,6 +21,7 @@ const preprocessMarkdown = (text: string): string => {
 };
 
 const TourDetail = () => {
+  const { t } = useLanguage();
   const { slug } = useParams<{ slug: string }>();
   const tour = getTourBySlug(slug || "");
 
@@ -27,8 +29,8 @@ const TourDetail = () => {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
-          <h1 className="font-serif text-4xl text-foreground mb-4">Tour Not Found</h1>
-          <Link to="/" className="text-primary hover:underline">Back to Home</Link>
+          <h1 className="font-serif text-4xl text-foreground mb-4">{t.tourDetail.notFound}</h1>
+          <Link to="/" className="text-primary hover:underline">{t.tourDetail.backHome}</Link>
         </div>
       </div>
     );
@@ -54,11 +56,11 @@ const TourDetail = () => {
             transition={{ duration: 0.6 }}
           >
             <p className="inline-flex items-center gap-2 bg-foreground/20 backdrop-blur-sm text-primary-foreground text-xs font-medium px-4 py-1.5 rounded-full mb-6">
-              Golden Coast Excursions
+              {t.tourDetail.brand}
             </p>
             <h1 className="font-serif text-4xl md:text-6xl text-primary-foreground leading-tight">{tour.title}</h1>
             <p className="mt-4 text-primary-foreground/80 text-lg">
-              From <span className="text-gradient font-semibold text-2xl">{tour.price}</span>
+              {t.tourDetail.fromPrice} <span className="text-gradient font-semibold text-2xl">{tour.price}</span>
             </p>
           </motion.div>
         </div>
@@ -73,10 +75,10 @@ const TourDetail = () => {
       >
         <div className="bg-background border border-border rounded-lg p-6 grid grid-cols-2 md:grid-cols-4 gap-6 shadow-[var(--shadow-card)]">
           {[
-            { icon: Clock, label: "Duration", value: tour.duration },
-            { icon: Users, label: "Group", value: tour.groupSize },
-            { icon: Star, label: "Rating", value: `${tour.rating}/5` },
-            { icon: Calendar, label: "Availability", value: tour.availability },
+            { icon: Clock, label: t.tourDetail.stats.duration, value: tour.duration },
+            { icon: Users, label: t.tourDetail.stats.group, value: tour.groupSize },
+            { icon: Star, label: t.tourDetail.stats.rating, value: `${tour.rating}/5` },
+            { icon: Calendar, label: t.tourDetail.stats.availability, value: tour.availability },
           ].map((stat) => (
             <div key={stat.label} className="flex flex-col items-center text-center gap-2">
               <stat.icon size={24} className="text-primary" />
@@ -93,7 +95,7 @@ const TourDetail = () => {
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-12">
             <Link to="/#tours" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
-              <ArrowLeft size={16} /> Back to all tours
+              <ArrowLeft size={16} /> {t.tourDetail.backTours}
             </Link>
 
             <motion.div
@@ -101,8 +103,8 @@ const TourDetail = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary mb-2">Tour Details</p>
-              <h2 className="font-serif text-3xl text-foreground">About This Tour</h2>
+              <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary mb-2">{t.tourDetail.aboutLabel}</p>
+              <h2 className="font-serif text-3xl text-foreground">{t.tourDetail.aboutTitle}</h2>
               <div className="mt-6 space-y-1 text-[15px] leading-[1.8]">
                 <ReactMarkdown
                   components={{
@@ -155,7 +157,7 @@ const TourDetail = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h3 className="font-serif text-2xl text-foreground mb-6">Tour Program</h3>
+              <h3 className="font-serif text-2xl text-foreground mb-6">{t.tourDetail.programTitle}</h3>
               <div className="space-y-4">
                 {tour.program.map((step, i) => (
                   <div key={i} className="flex gap-4 items-start">
@@ -185,7 +187,7 @@ const TourDetail = () => {
               className="grid grid-cols-1 md:grid-cols-2 gap-8"
             >
               <div>
-                <h3 className="font-serif text-2xl text-foreground mb-4">What's Included</h3>
+                <h3 className="font-serif text-2xl text-foreground mb-4">{t.tourDetail.includedTitle}</h3>
                 <ul className="space-y-3">
                   {tour.included.map((item, i) => (
                     <li key={i} className="flex items-center gap-3 text-sm text-muted-foreground">
@@ -196,7 +198,7 @@ const TourDetail = () => {
                 </ul>
               </div>
               <div>
-                <h3 className="font-serif text-2xl text-foreground mb-4">Not Included</h3>
+                <h3 className="font-serif text-2xl text-foreground mb-4">{t.tourDetail.notIncludedTitle}</h3>
                 <ul className="space-y-3">
                   {tour.notIncluded.map((item, i) => (
                     <li key={i} className="flex items-center gap-3 text-sm text-muted-foreground">
@@ -217,27 +219,27 @@ const TourDetail = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="sticky top-24 border border-border rounded-lg p-6 bg-card shadow-[var(--shadow-card)]"
             >
-              <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary mb-2 text-center">Booking</p>
+              <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary mb-2 text-center">{t.tourDetail.bookingLabel}</p>
               <h3 className="font-serif text-xl text-foreground text-center mb-6">{tour.title}</h3>
               <div className="flex justify-between items-center py-4 border-t border-border">
-                <span className="text-sm text-muted-foreground">Price per person</span>
+                <span className="text-sm text-muted-foreground">{t.tourDetail.pricePerPerson}</span>
                 <span className="text-2xl font-semibold text-foreground">{tour.price}</span>
               </div>
               <div className="flex justify-between items-center py-4 border-t border-border">
-                <span className="text-sm text-muted-foreground">Duration</span>
+                <span className="text-sm text-muted-foreground">{t.tourDetail.stats.duration}</span>
                 <span className="text-sm font-medium text-foreground">{tour.duration}</span>
               </div>
               <div className="flex justify-between items-center py-4 border-t border-border">
-                <span className="text-sm text-muted-foreground">Group size</span>
+                <span className="text-sm text-muted-foreground">{t.tourDetail.stats.group}</span>
                 <span className="text-sm font-medium text-foreground">{tour.groupSize}</span>
               </div>
               <button
                 onClick={handleBooking}
                 className="mt-6 w-full bg-gradient-primary text-primary-foreground font-medium py-3 rounded-sm text-sm transition-transform duration-300 hover:scale-[0.98] active:scale-95"
               >
-                Book via WhatsApp
+                {t.tourDetail.bookViaWhatsApp}
               </button>
-              <p className="mt-4 text-xs text-muted-foreground text-center">No prepayment required. Pay your guide on the day.</p>
+              <p className="mt-4 text-xs text-muted-foreground text-center">{t.tourDetail.noPrepayment}</p>
             </motion.div>
           </div>
         </div>

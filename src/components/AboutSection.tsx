@@ -1,21 +1,25 @@
 import { motion } from "framer-motion";
 import { Globe, Heart, Shield, Leaf } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-const features = [
-  { icon: Globe, title: "Expert Guides", desc: "English-speaking guides with deep knowledge of Egypt." },
-  { icon: Heart, title: "Personalized Service", desc: "Every tour tailored to your preferences." },
-  { icon: Shield, title: "Safety First", desc: "Certified equipment and trained professionals." },
-  { icon: Leaf, title: "Eco Tourism", desc: "Protecting the Red Sea ecosystem." },
-];
+const AboutSection = () => {
+  const { t } = useLanguage();
 
-const AboutSection = () => (
+  const features = [
+    { icon: Globe, title: t.aboutSection.features.guides, desc: t.aboutSection.features.guidesDesc },
+    { icon: Heart, title: t.aboutSection.features.service, desc: t.aboutSection.features.serviceDesc },
+    { icon: Shield, title: t.aboutSection.features.safety, desc: t.aboutSection.features.safetyDesc },
+    { icon: Leaf, title: t.aboutSection.features.eco, desc: t.aboutSection.features.ecoDesc },
+  ];
+
+  return (
   <section id="about" className="py-16 px-4 md:px-6 bg-card">
     <div className="container mx-auto">
       <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="max-w-3xl mx-auto text-center">
-        <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary mb-2">About Golden Coast Excursions</p>
-        <h2 className="font-serif text-3xl md:text-4xl text-foreground">Creating Unforgettable Memories Since 2010</h2>
+        <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary mb-2">{t.aboutSection.subtitle}</p>
+        <h2 className="font-serif text-3xl md:text-4xl text-foreground">{t.aboutSection.title}</h2>
         <p className="mt-6 text-[15px] leading-[1.6] text-muted-foreground prose-travel">
-          At Golden Coast Excursions, we believe travel should be an extraordinary experience. For over a decade, we've guided guests through the wonders of Hurghada — from the spectacular underwater world of the Red Sea to the mystical beauty of the Eastern Desert.
+          {t.aboutSection.description}
         </p>
       </motion.div>
       <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
@@ -30,6 +34,7 @@ const AboutSection = () => (
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default AboutSection;

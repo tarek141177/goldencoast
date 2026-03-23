@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 import gallery01 from "@/assets/gallery/gallery_01.jpeg";
 import gallery02 from "@/assets/gallery/gallery_02.jpeg";
@@ -51,6 +52,7 @@ const galleryImages = [
 ];
 
 const Gallery = () => {
+  const { t } = useLanguage();
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   const openLightbox = (index: number) => setLightboxIndex(index);
@@ -99,10 +101,10 @@ const Gallery = () => {
               className="text-center mb-12"
             >
               <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4">
-                Photo Gallery
+                {t.galleryPage.title}
               </h1>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Explore the beauty of our tours and destinations. Click any photo to view it in full size.
+                {t.galleryPage.subtitle}
               </p>
             </motion.div>
 

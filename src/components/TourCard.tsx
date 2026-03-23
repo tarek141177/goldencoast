@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Clock, Users, Star } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface TourCardProps {
   slug: string;
@@ -15,6 +16,7 @@ interface TourCardProps {
 }
 
 const TourCard = ({ slug, image, title, description, price, duration, groupSize, rating, badge }: TourCardProps) => {
+  const { t } = useLanguage();
   return (
     <Link to={`/tour/${slug}`} className="block h-full" target="_blank" rel="noopener noreferrer">
       <motion.div
@@ -57,7 +59,7 @@ const TourCard = ({ slug, image, title, description, price, duration, groupSize,
           
           <div className="mt-auto">
             <span className="inline-block w-full text-center bg-primary text-primary-foreground hover:bg-primary/90 rounded-md py-2.5 text-sm font-medium transition-colors">
-              Read More
+              {t.tourCard.readMore}
             </span>
           </div>
         </div>

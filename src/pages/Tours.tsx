@@ -4,8 +4,11 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TourCard from "@/components/TourCard";
 import { safariTours, seaTours, cairoTours, cityTours, Tour } from "@/data/tours";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ToursPage = () => {
+  const { t } = useLanguage();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -41,16 +44,16 @@ const ToursPage = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h1 className="font-serif text-4xl md:text-5xl text-foreground mb-4">All Our Tours</h1>
+          <h1 className="font-serif text-4xl md:text-5xl text-foreground mb-4">{t.toursPage.title}</h1>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Discover all the amazing experiences we offer in and around Hurghada. From desert safaris to historical trips.
+            {t.toursPage.subtitle}
           </p>
         </motion.div>
 
-        {renderTourGroup("Sea & Snorkeling", "Discover the Red Sea paradise! Orange Bay, Giftun Island, dolphin snorkeling and coral reefs.", seaTours)}
-        {renderTourGroup("Safari & Adventure", "Experience an unforgettable desert adventure! Quad biking, buggy rides, and a visit to a Bedouin village.", safariTours)}
-        {renderTourGroup("Historical Trips", "Discover the wonders of ancient Egypt! Pyramids of Giza, Sphinx, Grand Egyptian Museum, and Luxor.", cairoTours)}
-        {renderTourGroup("City & Attractions", "Explore the beauty of Hurghada, El Gouna, and top local attractions like the Grand Aquarium.", cityTours)}
+        {renderTourGroup(t.toursPage.groups.sea.title, t.toursPage.groups.sea.desc, seaTours)}
+        {renderTourGroup(t.toursPage.groups.safari.title, t.toursPage.groups.safari.desc, safariTours)}
+        {renderTourGroup(t.toursPage.groups.history.title, t.toursPage.groups.history.desc, cairoTours)}
+        {renderTourGroup(t.toursPage.groups.city.title, t.toursPage.groups.city.desc, cityTours)}
       </div>
       <Footer />
     </div>

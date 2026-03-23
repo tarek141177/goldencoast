@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import TourCard from "./TourCard";
 import { safariTours, seaTours, cairoTours, Tour } from "@/data/tours";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface TourGroupProps {
   label: string;
@@ -26,14 +27,17 @@ const TourGroup = ({ label, title, description, tours }: TourGroupProps) => (
   </div>
 );
 
-const ToursSection = () => (
-  <section id="tours" className="py-12 px-4 md:px-6">
-    <div className="container mx-auto">
-      <TourGroup label="Quad, Buggy & Adventure" title="Desert Safari from Hurghada" description="Experience an unforgettable desert adventure! Quad biking, buggy rides, and a visit to a Bedouin village." tours={safariTours} />
-      <TourGroup label="Snorkeling & Islands" title="Sea Trips from Hurghada" description="Discover the Red Sea paradise! Orange Bay, Giftun Island, dolphin snorkeling and coral reefs. ✓ Equipment included ✓ Lunch and drinks ✓ Hotel pickup. Book today!" tours={seaTours} />
-      <TourGroup label="Pyramids, Museum & Sphinx" title="Cairo Trip from Hurghada" description="Discover the wonders of ancient Egypt! Pyramids of Giza, Sphinx, Grand Egyptian Museum. ✓ By plane ✓ Professional guide ✓ Lunch. Book the day trip!" tours={cairoTours} />
-    </div>
-  </section>
-);
+const ToursSection = () => {
+  const { t } = useLanguage();
+  return (
+    <section id="tours" className="py-12 px-4 md:px-6">
+      <div className="container mx-auto">
+        <TourGroup label={t.toursSection.groups.safari.label} title={t.toursSection.groups.safari.title} description={t.toursSection.groups.safari.desc} tours={safariTours} />
+        <TourGroup label={t.toursSection.groups.sea.label} title={t.toursSection.groups.sea.title} description={t.toursSection.groups.sea.desc} tours={seaTours} />
+        <TourGroup label={t.toursSection.groups.cairo.label} title={t.toursSection.groups.cairo.title} description={t.toursSection.groups.cairo.desc} tours={cairoTours} />
+      </div>
+    </section>
+  );
+};
 
 export default ToursSection;
