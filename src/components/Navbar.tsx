@@ -104,7 +104,7 @@ const Navbar = () => {
           </div>
 
           <a
-            href="https://wa.me/201114236997"
+            href="https://wa.me/201008734649"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden md:inline-flex bg-gradient-primary text-primary-foreground text-sm font-medium px-5 py-2 rounded-sm transition-transform duration-300 hover:scale-[0.98] active:scale-95 shrink-0"
@@ -142,7 +142,7 @@ const Navbar = () => {
                 </Link>
               ))}
               <a
-                href="https://wa.me/201114236997"
+                href="https://wa.me/201008734649"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-gradient-primary text-primary-foreground text-sm font-sans font-medium px-5 py-3 rounded-sm text-center mt-2"

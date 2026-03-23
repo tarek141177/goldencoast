@@ -50,7 +50,7 @@ const TourDetail = () => {
 
   const handleBooking = () => {
     const msg = `Hi! I'd like to book the "${displayTitle}" tour (${rawPrice} per person). Please send me more details.`;
-    window.open(`https://wa.me/201114236997?text=${encodeURIComponent(msg)}`, "_blank");
+    window.open(`https://wa.me/201008734649?text=${encodeURIComponent(msg)}`, "_blank");
   };
 
   return (

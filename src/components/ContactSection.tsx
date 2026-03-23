@@ -10,7 +10,7 @@ const ContactSection = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const msg = `Name: ${formData.firstName} ${formData.lastName}\nEmail: ${formData.email}\nInterested in: ${formData.interest}\nMessage: ${formData.message}`;
-    window.open(`https://wa.me/201114236997?text=${encodeURIComponent(msg)}`, "_blank");
+    window.open(`https://wa.me/201008734649?text=${encodeURIComponent(msg)}`, "_blank");
   };
 
   return (
@@ -25,7 +25,7 @@ const ContactSection = () => {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="space-y-6">
             {[
               { icon: MapPin, label: t.contactSection.location, value: t.contactSection.locationValue },
-              { icon: Phone, label: t.contactSection.phone, value: "+20 111 423 6997", href: "https://wa.me/201114236997" },
+              { icon: Phone, label: t.contactSection.phone, value: "+20 100 873 4649", href: "https://wa.me/201008734649" },
               { icon: Mail, label: t.contactSection.email, value: "GoldenCoastexcursions1@gmail.com", href: "mailto:GoldenCoastexcursions1@gmail.com" },
               { icon: Clock, label: t.contactSection.hours, value: t.contactSection.hoursValue },
             ].map((item) => (

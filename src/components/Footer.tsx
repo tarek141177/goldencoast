@@ -18,13 +18,13 @@ const Footer = () => {
             {t.footer.brandDesc}
           </p>
           <div className="flex gap-3 mt-5">
-            <a href="#" className="w-9 h-9 rounded-full bg-primary-foreground/15 hover:bg-primary-foreground/25 flex items-center justify-center transition-colors">
+            <a href="https://www.facebook.com/share/1PfUBue37K/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-primary-foreground/15 hover:bg-primary-foreground/25 flex items-center justify-center transition-colors">
               <Facebook size={16} />
             </a>
             <a href="#" className="w-9 h-9 rounded-full bg-primary-foreground/15 hover:bg-primary-foreground/25 flex items-center justify-center transition-colors">
               <Instagram size={16} />
             </a>
-            <a href="#" className="w-9 h-9 rounded-full bg-primary-foreground/15 hover:bg-primary-foreground/25 flex items-center justify-center transition-colors">
+            <a href="https://wa.me/201008734649" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-primary-foreground/15 hover:bg-primary-foreground/25 flex items-center justify-center transition-colors">
               <MessageCircle size={16} />
             </a>
           </div>
@@ -62,7 +62,7 @@ const Footer = () => {
             </li>
             <li className="flex items-center gap-2.5">
               <Phone size={16} className="shrink-0" />
-              <span>+20 111 423 6997</span>
+              <span>+20 100 873 4649</span>
             </li>
             <li className="flex items-center gap-2.5">
               <Mail size={16} className="shrink-0" />
