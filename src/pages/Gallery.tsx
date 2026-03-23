@@ -2,33 +2,19 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-import image1 from "@/assets/image1.jpg";
-import image2 from "@/assets/image2.jpg";
-import image3 from "@/assets/image3.jpg";
-import image4 from "@/assets/image4.jpg";
-import image5 from "@/assets/image5.jpg";
-import image6 from "@/assets/image6.jpg";
-import image7 from "@/assets/image7.jpg";
-import image8 from "@/assets/image8.jpg";
-import image9 from "@/assets/image9.jpg";
-import image10 from "@/assets/image10.jpg";
-import image11 from "@/assets/image11.jpg";
-import image12 from "@/assets/image12.jpg";
-import image13 from "@/assets/image13.jpg";
-import image14 from "@/assets/image14.jpg";
-import image15 from "@/assets/image15.jpg";
-import image16 from "@/assets/image16.jpg";
-import image17 from "@/assets/image17.jpg";
-import image18 from "@/assets/image18.jpg";
-import image19 from "@/assets/image19.jpg";
-import image20 from "@/assets/image20.jpg";
-import image21 from "@/assets/image21.jpg";
-import image22 from "@/assets/image22.jpg";
+// ======================================================
+// أضف صورك هنا — Add your gallery images below
+// ======================================================
+// 1. ضع الصور داخل المجلد: src/assets/gallery/
+// 2. استورد كل صورة هكذا:
+//    import img1 from "@/assets/gallery/photo1.jpg";
+// 3. أضف كل صورة داخل المصفوفة galleryImages مع وصف (alt)
+// ======================================================
 
-const images = [
-  image1, image2, image3, image4, image5, image6, image7, image8, image9, image10,
-  image11, image12, image13, image14, image15, image16, image17, image18, image19, image20,
-  image21, image22
+const galleryImages: { src: string; alt: string }[] = [
+  // Example (uncomment and replace with your images):
+  // { src: img1, alt: "Paradise Island Hurghada" },
+  // { src: img2, alt: "Orange Bay Beach" },
 ];
 
 const Gallery = () => {
@@ -48,31 +34,58 @@ const Gallery = () => {
                 Photo Gallery
               </h1>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Explore the beauty of our tours and destinations through our photo gallery. Get inspired for your next adventure with Golden Coast Excursions.
+                Explore the beauty of our tours and destinations through our photo gallery.
+                Get inspired for your next adventure with Golden Coast Excursions.
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {images.map((src, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: (index % 10) * 0.05 }}
-                  className="relative aspect-square overflow-hidden rounded-lg group"
+            {galleryImages.length === 0 ? (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="flex flex-col items-center justify-center py-24 text-muted-foreground gap-4"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="64"
+                  height="64"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="opacity-40"
                 >
-                  <img
-                    src={src}
-                    alt={`Gallery Image ${index + 1}`}
-                    className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                </motion.div>
-              ))}
-            </div>
+                  <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
+                  <circle cx="9" cy="9" r="2" />
+                  <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
+                </svg>
+                <p className="text-lg font-medium">Photos coming soon</p>
+                <p className="text-sm opacity-70">We're preparing beautiful photos for you.</p>
+              </motion.div>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {galleryImages.map((img, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: (index % 10) * 0.05 }}
+                    className="relative aspect-square overflow-hidden rounded-lg group"
+                  >
+                    <img
+                      src={img.src}
+                      alt={img.alt}
+                      className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                  </motion.div>
+                ))}
+              </div>
+            )}
           </div>
         </section>
       </main>
