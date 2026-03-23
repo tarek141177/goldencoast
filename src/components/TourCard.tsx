@@ -17,6 +17,14 @@ interface TourCardProps {
 
 const TourCard = ({ slug, image, title, description, price, duration, groupSize, rating, badge }: TourCardProps) => {
   const { t } = useLanguage();
+  
+  const locData = t.toursContent?.[slug];
+  const displayTitle = locData?.title || title;
+  const displayDesc = locData?.description || description;
+  const displayDuration = locData?.duration || duration;
+  const displayGroupSize = locData?.groupSize || groupSize;
+  const displayPrice = locData?.price ? `${t.tourDetail.fromPrice} ${locData.price}` : price;
+
   return (
     <Link to={`/tour/${slug}`} className="block h-full" target="_blank" rel="noopener noreferrer">
       <motion.div
@@ -37,20 +45,20 @@ const TourCard = ({ slug, image, title, description, price, duration, groupSize,
             </div>
           )}
           <div className="absolute top-3 right-3 bg-foreground/80 text-primary-foreground text-sm font-bold px-3 py-1 rounded-full">
-            {price}
+            {displayPrice}
           </div>
         </div>
 
         <div className="p-5 flex flex-col flex-grow">
-          <h3 className="font-serif text-xl text-foreground font-semibold">{title}</h3>
-          <p className="mt-2 text-sm text-muted-foreground line-clamp-2 leading-relaxed">{description}</p>
+          <h3 className="font-serif text-xl text-foreground font-semibold">{displayTitle}</h3>
+          <p className="mt-2 text-sm text-muted-foreground line-clamp-2 leading-relaxed">{displayDesc}</p>
 
           <div className="mt-4 flex items-center gap-4 text-xs text-muted-foreground mb-6">
             <span className="flex items-center gap-1.5">
-              <Clock size={14} className="text-primary" /> {duration}
+              <Clock size={14} className="text-primary" /> {displayDuration}
             </span>
             <span className="flex items-center gap-1.5">
-              <Users size={14} className="text-primary" /> {groupSize}
+              <Users size={14} className="text-primary" /> {displayGroupSize}
             </span>
             <span className="flex items-center gap-1.5">
               <Star size={14} className="text-primary" fill="currentColor" /> {rating}

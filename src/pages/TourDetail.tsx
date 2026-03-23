@@ -24,6 +24,7 @@ const TourDetail = () => {
   const { t } = useLanguage();
   const { slug } = useParams<{ slug: string }>();
   const tour = getTourBySlug(slug || "");
+  const locData = t.toursContent?.[slug || ""];
 
   if (!tour) {
     return (
@@ -36,8 +37,19 @@ const TourDetail = () => {
     );
   }
 
+  const displayTitle = locData?.title || tour.title;
+  const displayPrice = locData?.price ? `${t.tourDetail.fromPrice} ${locData.price}` : tour.price;
+  const displayDuration = locData?.duration || tour.duration;
+  const displayGroupSize = locData?.groupSize || tour.groupSize;
+  const displayAvailability = locData?.availability || tour.availability;
+  const displayLongDesc = locData?.longDescription || tour.longDescription;
+  const displayProgram = locData?.program || tour.program;
+  const displayIncluded = locData?.included || tour.included;
+  const displayNotIncluded = locData?.notIncluded || tour.notIncluded;
+  const rawPrice = locData?.price ? locData.price : tour.price;
+
   const handleBooking = () => {
-    const msg = `Hi! I'd like to book the "${tour.title}" tour (${tour.price} per person). Please send me more details.`;
+    const msg = `Hi! I'd like to book the "${displayTitle}" tour (${rawPrice} per person). Please send me more details.`;
     window.open(`https://wa.me/201114236997?text=${encodeURIComponent(msg)}`, "_blank");
   };
 
@@ -58,9 +70,15 @@ const TourDetail = () => {
             <p className="inline-flex items-center gap-2 bg-foreground/20 backdrop-blur-sm text-primary-foreground text-xs font-medium px-4 py-1.5 rounded-full mb-6">
               {t.tourDetail.brand}
             </p>
-            <h1 className="font-serif text-4xl md:text-6xl text-primary-foreground leading-tight">{tour.title}</h1>
+            <h1 className="font-serif text-4xl md:text-6xl text-primary-foreground leading-tight">{displayTitle}</h1>
             <p className="mt-4 text-primary-foreground/80 text-lg">
-              {t.tourDetail.fromPrice} <span className="text-gradient font-semibold text-2xl">{tour.price}</span>
+              {displayPrice.replace(t.tourDetail.fromPrice, "").trim() ? (
+                <>
+                  {t.tourDetail.fromPrice} <span className="text-gradient font-semibold text-2xl">{rawPrice}</span>
+                </>
+              ) : (
+                displayPrice
+              )}
             </p>
           </motion.div>
         </div>
@@ -75,10 +93,10 @@ const TourDetail = () => {
       >
         <div className="bg-background border border-border rounded-lg p-6 grid grid-cols-2 md:grid-cols-4 gap-6 shadow-[var(--shadow-card)]">
           {[
-            { icon: Clock, label: t.tourDetail.stats.duration, value: tour.duration },
-            { icon: Users, label: t.tourDetail.stats.group, value: tour.groupSize },
+            { icon: Clock, label: t.tourDetail.stats.duration, value: displayDuration },
+            { icon: Users, label: t.tourDetail.stats.group, value: displayGroupSize },
             { icon: Star, label: t.tourDetail.stats.rating, value: `${tour.rating}/5` },
-            { icon: Calendar, label: t.tourDetail.stats.availability, value: tour.availability },
+            { icon: Calendar, label: t.tourDetail.stats.availability, value: displayAvailability },
           ].map((stat) => (
             <div key={stat.label} className="flex flex-col items-center text-center gap-2">
               <stat.icon size={24} className="text-primary" />
@@ -146,7 +164,7 @@ const TourDetail = () => {
                     ),
                   }}
                 >
-                  {preprocessMarkdown(tour.longDescription)}
+                  {preprocessMarkdown(displayLongDesc)}
                 </ReactMarkdown>
               </div>
             </motion.div>
@@ -159,7 +177,7 @@ const TourDetail = () => {
             >
               <h3 className="font-serif text-2xl text-foreground mb-6">{t.tourDetail.programTitle}</h3>
               <div className="space-y-4">
-                {tour.program.map((step, i) => (
+                {displayProgram.map((step: string, i: number) => (
                   <div key={i} className="flex gap-4 items-start">
                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-primary flex items-center justify-center text-primary-foreground text-xs font-semibold">
                       {i + 1}
@@ -189,7 +207,7 @@ const TourDetail = () => {
               <div>
                 <h3 className="font-serif text-2xl text-foreground mb-4">{t.tourDetail.includedTitle}</h3>
                 <ul className="space-y-3">
-                  {tour.included.map((item, i) => (
+                  {displayIncluded.map((item: string, i: number) => (
                     <li key={i} className="flex items-center gap-3 text-sm text-muted-foreground">
                       <Check size={16} className="text-primary flex-shrink-0" />
                       {item}
@@ -200,7 +218,7 @@ const TourDetail = () => {
               <div>
                 <h3 className="font-serif text-2xl text-foreground mb-4">{t.tourDetail.notIncludedTitle}</h3>
                 <ul className="space-y-3">
-                  {tour.notIncluded.map((item, i) => (
+                  {displayNotIncluded.map((item: string, i: number) => (
                     <li key={i} className="flex items-center gap-3 text-sm text-muted-foreground">
                       <X size={16} className="text-destructive flex-shrink-0" />
                       {item}
@@ -220,18 +238,18 @@ const TourDetail = () => {
               className="sticky top-24 border border-border rounded-lg p-6 bg-card shadow-[var(--shadow-card)]"
             >
               <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary mb-2 text-center">{t.tourDetail.bookingLabel}</p>
-              <h3 className="font-serif text-xl text-foreground text-center mb-6">{tour.title}</h3>
+              <h3 className="font-serif text-xl text-foreground text-center mb-6">{displayTitle}</h3>
               <div className="flex justify-between items-center py-4 border-t border-border">
                 <span className="text-sm text-muted-foreground">{t.tourDetail.pricePerPerson}</span>
-                <span className="text-2xl font-semibold text-foreground">{tour.price}</span>
+                <span className="text-2xl font-semibold text-foreground">{rawPrice}</span>
               </div>
               <div className="flex justify-between items-center py-4 border-t border-border">
                 <span className="text-sm text-muted-foreground">{t.tourDetail.stats.duration}</span>
-                <span className="text-sm font-medium text-foreground">{tour.duration}</span>
+                <span className="text-sm font-medium text-foreground">{displayDuration}</span>
               </div>
               <div className="flex justify-between items-center py-4 border-t border-border">
                 <span className="text-sm text-muted-foreground">{t.tourDetail.stats.group}</span>
-                <span className="text-sm font-medium text-foreground">{tour.groupSize}</span>
+                <span className="text-sm font-medium text-foreground">{displayGroupSize}</span>
               </div>
               <button
                 onClick={handleBooking}
