@@ -47,12 +47,6 @@ const Navbar = () => {
           <img src="/logo.png" alt="Golden Coast Excursions Logo" className="h-[60px] w-auto object-contain py-1 drop-shadow-sm" />
         </Link>
 
-        {/* Center Logo Text */}
-        <Link to="/" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0 hidden lg:block">
-          <span className="font-serif text-2xl tracking-tight text-foreground whitespace-nowrap">
-            Golden Coast Excursions
-          </span>
-        </Link>
 
         <div className="flex items-center gap-4 lg:gap-8 z-10">
           <div className="hidden md:flex items-center gap-6 lg:gap-8">
