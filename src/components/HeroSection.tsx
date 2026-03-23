@@ -9,7 +9,7 @@ const HeroSection = () => {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
-        <img src={heroImg} alt="Hurghada Red Sea coast at sunset" className="h-full w-full object-cover" />
+        <img src={heroImg} alt="Hurghada Red Sea coast at sunset" className="h-full w-full object-cover object-right-bottom" />
         <div className="absolute inset-0" style={{ background: "var(--gradient-hero-overlay)" }} />
       </div>
       <div className="relative z-10 text-center px-4 md:px-6 max-w-4xl mx-auto pt-16">
