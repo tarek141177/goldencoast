@@ -2,19 +2,50 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-// ======================================================
-// أضف صورك هنا — Add your gallery images below
-// ======================================================
-// 1. ضع الصور داخل المجلد: src/assets/gallery/
-// 2. استورد كل صورة هكذا:
-//    import img1 from "@/assets/gallery/photo1.jpg";
-// 3. أضف كل صورة داخل المصفوفة galleryImages مع وصف (alt)
-// ======================================================
+import gallery01 from "@/assets/gallery/gallery_01.jpeg";
+import gallery02 from "@/assets/gallery/gallery_02.jpeg";
+import gallery03 from "@/assets/gallery/gallery_03.jpeg";
+import gallery04 from "@/assets/gallery/gallery_04.jpeg";
+import gallery05 from "@/assets/gallery/gallery_05.jpeg";
+import gallery06 from "@/assets/gallery/gallery_06.jpeg";
+import gallery07 from "@/assets/gallery/gallery_07.jpeg";
+import gallery08 from "@/assets/gallery/gallery_08.jpeg";
+import gallery09 from "@/assets/gallery/gallery_09.jpeg";
+import gallery10 from "@/assets/gallery/gallery_10.jpeg";
+import gallery11 from "@/assets/gallery/gallery_11.jpeg";
+import gallery12 from "@/assets/gallery/gallery_12.jpeg";
+import gallery13 from "@/assets/gallery/gallery_13.jpeg";
+import gallery14 from "@/assets/gallery/gallery_14.jpeg";
+import gallery15 from "@/assets/gallery/gallery_15.jpeg";
+import gallery16 from "@/assets/gallery/gallery_16.jpeg";
+import gallery17 from "@/assets/gallery/gallery_17.jpeg";
+import gallery18 from "@/assets/gallery/gallery_18.jpeg";
+import gallery19 from "@/assets/gallery/gallery_19.jpeg";
+import gallery20 from "@/assets/gallery/gallery_20.jpeg";
+import gallery21 from "@/assets/gallery/gallery_21.jpeg";
 
-const galleryImages: { src: string; alt: string }[] = [
-  // Example (uncomment and replace with your images):
-  // { src: img1, alt: "Paradise Island Hurghada" },
-  // { src: img2, alt: "Orange Bay Beach" },
+const galleryImages = [
+  { src: gallery01, alt: "Golden Coast Excursions - Tour 1" },
+  { src: gallery02, alt: "Golden Coast Excursions - Tour 2" },
+  { src: gallery03, alt: "Golden Coast Excursions - Tour 3" },
+  { src: gallery04, alt: "Golden Coast Excursions - Tour 4" },
+  { src: gallery05, alt: "Golden Coast Excursions - Tour 5" },
+  { src: gallery06, alt: "Golden Coast Excursions - Tour 6" },
+  { src: gallery07, alt: "Golden Coast Excursions - Tour 7" },
+  { src: gallery08, alt: "Golden Coast Excursions - Tour 8" },
+  { src: gallery09, alt: "Golden Coast Excursions - Tour 9" },
+  { src: gallery10, alt: "Golden Coast Excursions - Tour 10" },
+  { src: gallery11, alt: "Golden Coast Excursions - Tour 11" },
+  { src: gallery12, alt: "Golden Coast Excursions - Tour 12" },
+  { src: gallery13, alt: "Golden Coast Excursions - Tour 13" },
+  { src: gallery14, alt: "Golden Coast Excursions - Tour 14" },
+  { src: gallery15, alt: "Golden Coast Excursions - Tour 15" },
+  { src: gallery16, alt: "Golden Coast Excursions - Tour 16" },
+  { src: gallery17, alt: "Golden Coast Excursions - Tour 17" },
+  { src: gallery18, alt: "Golden Coast Excursions - Tour 18" },
+  { src: gallery19, alt: "Golden Coast Excursions - Tour 19" },
+  { src: gallery20, alt: "Golden Coast Excursions - Tour 20" },
+  { src: gallery21, alt: "Golden Coast Excursions - Tour 21" },
 ];
 
 const Gallery = () => {
@@ -39,53 +70,26 @@ const Gallery = () => {
               </p>
             </motion.div>
 
-            {galleryImages.length === 0 ? (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="flex flex-col items-center justify-center py-24 text-muted-foreground gap-4"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="64"
-                  height="64"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="opacity-40"
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {galleryImages.map((img, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: (index % 8) * 0.06 }}
+                  className="relative aspect-square overflow-hidden rounded-lg group cursor-pointer"
                 >
-                  <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
-                  <circle cx="9" cy="9" r="2" />
-                  <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
-                </svg>
-                <p className="text-lg font-medium">Photos coming soon</p>
-                <p className="text-sm opacity-70">We're preparing beautiful photos for you.</p>
-              </motion.div>
-            ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {galleryImages.map((img, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: (index % 10) * 0.05 }}
-                    className="relative aspect-square overflow-hidden rounded-lg group"
-                  >
-                    <img
-                      src={img.src}
-                      alt={img.alt}
-                      className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                  </motion.div>
-                ))}
-              </div>
-            )}
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
       </main>
