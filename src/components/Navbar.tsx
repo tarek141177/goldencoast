@@ -19,12 +19,12 @@ const Navbar = () => {
     { label: t.nav.contact, href: "/contact" },
   ];
 
-  const languages: { code: Language; label: string; flag: string }[] = [
-    { code: 'en', label: 'English', flag: '🇬🇧' },
-    { code: 'de', label: 'Deutsch', flag: '🇩🇪' },
-    { code: 'nl', label: 'Nederlands', flag: '🇳🇱' },
-    { code: 'pl', label: 'Polski', flag: '🇵🇱' },
-    { code: 'fr', label: 'Français', flag: '🇫🇷' },
+  const languages: { code: Language; label: string; countryCode: string }[] = [
+    { code: 'en', label: 'English', countryCode: 'gb' },
+    { code: 'de', label: 'Deutsch', countryCode: 'de' },
+    { code: 'nl', label: 'Nederlands', countryCode: 'nl' },
+    { code: 'pl', label: 'Polski', countryCode: 'pl' },
+    { code: 'fr', label: 'Français', countryCode: 'fr' },
   ];
 
   const currentLang = languages.find(l => l.code === language) || languages[0];
@@ -68,7 +68,7 @@ const Navbar = () => {
               className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2 px-1"
               aria-label="Change language"
             >
-              <span className="text-lg leading-none">{currentLang.flag}</span>
+              <img src={`https://flagcdn.com/w20/${currentLang.countryCode}.png`} alt={currentLang.code} className="w-[18px] object-contain rounded-[2px]" />
               <span className="uppercase text-xs font-bold">{currentLang.code}</span>
               <ChevronDown size={14} className={`transition-transform duration-200 ${langOpen ? 'rotate-180' : ''}`} />
             </button>
@@ -93,7 +93,7 @@ const Navbar = () => {
                           language === lang.code ? 'bg-primary/10 text-primary font-medium' : 'text-muted-foreground hover:bg-muted hover:text-foreground'
                         }`}
                       >
-                        <span className="text-lg leading-none">{lang.flag}</span>
+                        <img src={`https://flagcdn.com/w20/${lang.countryCode}.png`} alt={lang.code} className="w-5 object-contain rounded-sm" />
                         {lang.label}
                       </button>
                     ))}
