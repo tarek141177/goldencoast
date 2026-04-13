@@ -3,7 +3,7 @@
     "paradise-island-vip-hurghada": {
       "title": "Paradise Island Top VIP",
       "description": "This exclusive beach on Giftun Island is a true paradise. Sandy beach, turquoise water in Hurghada has been appreciated by tourists for a reason.",
-      "price": "$38",
+      "price": "$35",
       "duration": "Full day",
       "groupSize": "Up to 25 people",
       "availability": "Daily",
@@ -39,7 +39,7 @@
     "orange-bay-hurghada": {
       "title": "Orange Bay Hurghada – Egyptian Maldives",
       "description": "Discover Orange Bay Hurghada – a paradise beach known as the Egyptian Maldives! Cruise to Orange Island from Hurghada: snorkeling, VIP lunch, white sand, and turquoise water.",
-      "price": "$28",
+      "price": "$25",
       "duration": "Full day",
       "groupSize": "Up to 25 people",
       "availability": "Daily",
@@ -161,7 +161,7 @@
     "parasailing-hurghada": {
       "title": "Parasailing Hurghada",
       "description": "Hurghada parasailing is a several-minute parachute flight pulled by a speedboat over the Red Sea. An attraction in Hurghada worth your attention.",
-      "price": "$20",
+      "price": "$35",
       "duration": "2 hours",
       "groupSize": "1-2 people",
       "availability": "Daily",
@@ -207,7 +207,7 @@
     "diving-hurghada": {
       "title": "Diving Hurghada",
       "description": "Join us for an unforgettable journey to the underwater world, where every dive is a new discovery waiting for you! Regardless of level.",
-      "price": "$50",
+      "price": "$30",
       "duration": "Full day",
       "groupSize": "Up to 8 people",
       "availability": "Daily",
@@ -342,7 +342,7 @@
     "afternoon-quad-safari-hurghada": {
       "title": "Afternoon Quad Safari",
       "description": "Quad biking in the Sunset desert, camel riding and the opportunity to visit a Bedouin village at sunset.",
-      "price": "$20",
+      "price": "$30",
       "duration": "5 hours",
       "groupSize": "Up to 10 people",
       "availability": "Daily",
@@ -364,7 +364,7 @@
     "sahara-park-mega-safari": {
       "title": "Sahara Park - Mega Safari",
       "description": "Sahara Park from Hurghada Excellent trip for adults and children. Adventure with jeeps, quads and buggies and a visit to the Bedouins.",
-      "price": "$23",
+      "price": "$25",
       "duration": "Full day",
       "groupSize": "Up to 20 people",
       "availability": "Daily",
@@ -425,7 +425,7 @@
     "sindbad-submarine-hurghada": {
       "title": "Sindbad Submarine",
       "description": "Hurghada, located on the eastern coast of the Red Sea, is one of the most beautiful places for diving without getting wet.",
-      "price": "$75",
+      "price": "$20",
       "duration": "2 hours",
       "groupSize": "Up to 40 people",
       "availability": "Daily",
@@ -478,7 +478,7 @@
     "cairo-trip-from-hurghada": {
       "title": "Cairo Trip from Hurghada",
       "description": "For all lovers of ancient history. Here is a trip to Cairo from Hurghada, full of manifestations of the civilization of pharaohs and ancient nations. Pyramids, Sphinx, Egyptian Museum...",
-      "price": "$55",
+      "price": "$80",
       "duration": "Full day",
       "groupSize": "Up to 20 people",
       "availability": "Daily",
@@ -560,7 +560,7 @@
     "luxor-valley-of-kings-hurghada": {
       "title": "Luxor with Valley of the Kings",
       "description": "Hurghada is a popular tourist destination, famous for its beautiful beaches, corals and heavenly coral reefs. One of the biggest attractions of this region of Egypt are trips to Luxor with the Valley of the Kings.",
-      "price": "$60",
+      "price": "$75",
       "duration": "Full day",
       "groupSize": "Up to 20 people",
       "availability": "Daily",
@@ -590,7 +590,7 @@
     "paradise-island-vip-hurghada": {
       "title": "Paradise Island Top VIP",
       "description": "Dieser exklusive Strand auf der Insel Giftun ist ein wahres Paradies. Der Sandstrand und das türkisfarbene Wasser in Hurghada werden von Touristen nicht umsonst geschätzt.",
-      "price": "$38",
+      "price": "$35",
       "duration": "Ganzer Tag",
       "groupSize": "Bis zu 25 Personen",
       "availability": "Täglich",
@@ -626,7 +626,7 @@
     "orange-bay-hurghada": {
       "title": "Orange Bay Hurghada – Ägyptische Malediven",
       "description": "Entdecken Sie Orange Bay Hurghada – einen paradiesischen Strand, der auch als die ägyptischen Malediven bekannt ist! Kreuzfahrt von Hurghada nach Orange Island: Schnorcheln, VIP-Mittagessen, weißer Sand und türkisfarbenes Wasser.",
-      "price": "$28",
+      "price": "$25",
       "duration": "Ganzer Tag",
       "groupSize": "Bis zu 25 Personen",
       "availability": "Täglich",
@@ -748,7 +748,7 @@
     "parasailing-hurghada": {
       "title": "Parasailing Hurghada",
       "description": "Beim Parasailing in Hurghada handelt es sich um einen mehrminütigen Fallschirmflug, der von einem Schnellboot über das Rote Meer gezogen wird. Eine Attraktion in Hurghada, die Ihre Aufmerksamkeit wert ist.",
-      "price": "$20",
+      "price": "$35",
       "duration": "2 Stunden",
       "groupSize": "1-2 Personen",
       "availability": "Täglich",
@@ -885,7 +885,7 @@
     "afternoon-quad-safari-hurghada": {
       "title": "Nachmittags Quad-Safari",
       "description": "Quadfahren in der Sunset-Wüste, Kamelreiten und die Möglichkeit, ein Beduinendorf bei Sonnenuntergang zu besuchen.",
-      "price": "$20",
+      "price": "$30",
       "duration": "5 Stunden",
       "groupSize": "Bis zu 10 Personen",
       "availability": "Täglich",
@@ -907,7 +907,7 @@
     "sahara-park-mega-safari": {
       "title": "Sahara Park – Mega-Safari",
       "description": "Sahara Park von Hurghada Ausgezeichneter Ausflug für Erwachsene und Kinder. Abenteuer mit Jeeps, Quads und Buggys und ein Besuch bei den Beduinen.",
-      "price": "$23",
+      "price": "$25",
       "duration": "Ganzer Tag",
       "groupSize": "Bis zu 20 Personen",
       "availability": "Täglich",
@@ -968,7 +968,7 @@
     "sindbad-submarine-hurghada": {
       "title": "Sindbad-U-Boot",
       "description": "Hurghada, an der Ostküste des Roten Meeres gelegen, ist einer der schönsten Orte zum Tauchen, ohne nass zu werden.",
-      "price": "$75",
+      "price": "$20",
       "duration": "2 Stunden",
       "groupSize": "Bis zu 40 Personen",
       "availability": "Täglich",
@@ -1021,7 +1021,7 @@
     "cairo-trip-from-hurghada": {
       "title": "Kairo-Reise von Hurghada",
       "description": "Für alle Liebhaber der antiken Geschichte. Hier ist eine Reise von Hurghada nach Kairo, voller Manifestationen der Zivilisation der Pharaonen und alten Nationen. Pyramiden, Sphinx, Ägyptisches Museum...",
-      "price": "$55",
+      "price": "$80",
       "duration": "Ganzer Tag",
       "groupSize": "Bis zu 20 Personen",
       "availability": "Täglich",
@@ -1103,7 +1103,7 @@
     "luxor-valley-of-kings-hurghada": {
       "title": "Luxor mit Tal der Könige",
       "description": "Hurghada ist ein beliebtes Touristenziel, berühmt für seine wunderschönen Strände, Korallen und paradiesischen Korallenriffe. Eine der größten Attraktionen dieser Region Ägyptens sind Ausflüge nach Luxor mit dem Tal der Könige.",
-      "price": "$60",
+      "price": "$75",
       "duration": "Ganzer Tag",
       "groupSize": "Bis zu 20 Personen",
       "availability": "Täglich",
@@ -1133,7 +1133,7 @@
     "paradise-island-vip-hurghada": {
       "title": "Paradise Island Top-VIP",
       "description": "Dit exclusieve strand op Giftun Island is een waar paradijs. Het zandstrand en het turquoise water in Hurghada worden niet voor niets door toeristen gewaardeerd.",
-      "price": "$38",
+      "price": "$35",
       "duration": "Volledige dag",
       "groupSize": "Maximaal 25 personen",
       "availability": "Dagelijks",
@@ -1169,7 +1169,7 @@
     "orange-bay-hurghada": {
       "title": "Orange Bay Hurghada – Egyptische Malediven",
       "description": "Ontdek Orange Bay Hurghada – een paradijselijk strand dat bekend staat als de Egyptische Malediven! Cruise naar Orange Island vanuit Hurghada: snorkelen, VIP-lunch, wit zand en turquoise water.",
-      "price": "$28",
+      "price": "$25",
       "duration": "Volledige dag",
       "groupSize": "Maximaal 25 personen",
       "availability": "Dagelijks",
@@ -1291,7 +1291,7 @@
     "parasailing-hurghada": {
       "title": "Parasailen Hurghada",
       "description": "Parasailen in Hurghada is een parachutevlucht van enkele minuten, getrokken door een speedboot, over de Rode Zee. Een attractie in Hurghada die uw aandacht waard is.",
-      "price": "$20",
+      "price": "$35",
       "duration": "2 uur",
       "groupSize": "1-2 personen",
       "availability": "Dagelijks",
@@ -1428,7 +1428,7 @@
     "afternoon-quad-safari-hurghada": {
       "title": "Middag quadsafari",
       "description": "Quadrijden in de Sunset-woestijn, kameelrijden en de mogelijkheid om bij zonsondergang een bedoeïenendorp te bezoeken.",
-      "price": "$20",
+      "price": "$30",
       "duration": "5 uur",
       "groupSize": "Maximaal 10 personen",
       "availability": "Dagelijks",
@@ -1450,7 +1450,7 @@
     "sahara-park-mega-safari": {
       "title": "Sahara Park - Megasafari",
       "description": "Sahara Park vanuit Hurghada Uitstekende reis voor volwassenen en kinderen. Op avontuur met jeeps, quads en buggy's en een bezoek aan de bedoeïenen.",
-      "price": "$23",
+      "price": "$25",
       "duration": "Volledige dag",
       "groupSize": "Maximaal 20 personen",
       "availability": "Dagelijks",
@@ -1511,7 +1511,7 @@
     "sindbad-submarine-hurghada": {
       "title": "Sindbad-onderzeeër",
       "description": "Hurghada, gelegen aan de oostkust van de Rode Zee, is een van de mooiste plekken om te duiken zonder nat te worden.",
-      "price": "$75",
+      "price": "$20",
       "duration": "2 uur",
       "groupSize": "Maximaal 40 personen",
       "availability": "Dagelijks",
@@ -1564,7 +1564,7 @@
     "cairo-trip-from-hurghada": {
       "title": "Caïro-reis vanuit Hurghada",
       "description": "Voor alle liefhebbers van oude geschiedenis. Hier is een reis naar Caïro vanuit Hurghada, vol manifestaties van de beschaving van farao's en oude naties. Piramides, Sfinx, Egyptisch Museum...",
-      "price": "$55",
+      "price": "$80",
       "duration": "Volledige dag",
       "groupSize": "Maximaal 20 personen",
       "availability": "Dagelijks",
@@ -1646,7 +1646,7 @@
     "luxor-valley-of-kings-hurghada": {
       "title": "Luxor met Vallei der Koningen",
       "description": "Hurghada is een populaire toeristische bestemming, beroemd om zijn prachtige stranden, koralen en hemelse koraalriffen. Een van de grootste attracties van deze regio van Egypte zijn uitstapjes naar Luxor met de Vallei der Koningen.",
-      "price": "$60",
+      "price": "$75",
       "duration": "Volledige dag",
       "groupSize": "Maximaal 20 personen",
       "availability": "Dagelijks",
@@ -1676,7 +1676,7 @@
     "paradise-island-vip-hurghada": {
       "title": "Rajska Wyspa Najlepszy VIP",
       "description": "Ta ekskluzywna plaża na wyspie Giftun to prawdziwy raj. Piaszczysta plaża, turkusowa woda w Hurghadzie nie bez powodu została doceniona przez turystów.",
-      "price": "$38",
+      "price": "$35",
       "duration": "Cały dzień",
       "groupSize": "Do 25 osób",
       "availability": "Codziennie",
@@ -1712,7 +1712,7 @@
     "orange-bay-hurghada": {
       "title": "Orange Bay Hurghada – egipskie Malediwy",
       "description": "Odkryj Orange Bay Hurghada – rajską plażę zwaną egipskimi Malediwami! Rejs na wyspę Orange z Hurghady: snorkeling, lunch VIP, biały piasek i turkusowa woda.",
-      "price": "$28",
+      "price": "$25",
       "duration": "Cały dzień",
       "groupSize": "Do 25 osób",
       "availability": "Codziennie",
@@ -1834,7 +1834,7 @@
     "parasailing-hurghada": {
       "title": "Parasailing w Hurghadzie",
       "description": "Parasailing w Hurghadzie to kilkuminutowy lot na spadochronie ciągniętym przez łódź motorową nad Morzem Czerwonym. Atrakcja w Hurghadzie warta uwagi.",
-      "price": "$20",
+      "price": "$35",
       "duration": "2 godziny",
       "groupSize": "1-2 osoby",
       "availability": "Codziennie",
@@ -1971,7 +1971,7 @@
     "afternoon-quad-safari-hurghada": {
       "title": "Popołudniowe safari na quadach",
       "description": "Jazda na quadach po pustyni Sunset, jazda na wielbłądzie i możliwość odwiedzenia wioski Beduinów o zachodzie słońca.",
-      "price": "$20",
+      "price": "$30",
       "duration": "5 godzin",
       "groupSize": "Do 10 osób",
       "availability": "Codziennie",
@@ -1993,7 +1993,7 @@
     "sahara-park-mega-safari": {
       "title": "Park Sahara – Mega Safari",
       "description": "Sahara Park z Hurghady Doskonała wycieczka dla dorosłych i dzieci. Przygoda z jeepami, quadami i buggy oraz wizyta u Beduinów.",
-      "price": "$23",
+      "price": "$25",
       "duration": "Cały dzień",
       "groupSize": "Do 20 osób",
       "availability": "Codziennie",
@@ -2054,7 +2054,7 @@
     "sindbad-submarine-hurghada": {
       "title": "Łódź podwodna Sindbad",
       "description": "Hurghada, położona na wschodnim wybrzeżu Morza Czerwonego, to jedno z najpiękniejszych miejsc do nurkowania bez zamoczenia.",
-      "price": "$75",
+      "price": "$20",
       "duration": "2 godziny",
       "groupSize": "Do 40 osób",
       "availability": "Codziennie",
@@ -2107,7 +2107,7 @@
     "cairo-trip-from-hurghada": {
       "title": "Wycieczka do Kairu z Hurghady",
       "description": "Dla wszystkich miłośników historii starożytnej. Oto wycieczka do Kairu z Hurghady, pełna przejawów cywilizacji faraonów i starożytnych narodów. Piramidy, Sfinks, Muzeum Egipskie...",
-      "price": "$55",
+      "price": "$80",
       "duration": "Cały dzień",
       "groupSize": "Do 20 osób",
       "availability": "Codziennie",
@@ -2189,7 +2189,7 @@
     "luxor-valley-of-kings-hurghada": {
       "title": "Luksor z Doliną Królów",
       "description": "Hurghada to popularny kierunek turystyczny, słynący z pięknych plaż, koralowców i niebiańskich raf koralowych. Jedną z największych atrakcji tego regionu Egiptu są wycieczki do Luksoru z Doliną Królów.",
-      "price": "$60",
+      "price": "$75",
       "duration": "Cały dzień",
       "groupSize": "Do 20 osób",
       "availability": "Codziennie",
@@ -2219,7 +2219,7 @@
     "paradise-island-vip-hurghada": {
       "title": "Paradise Island Top VIP",
       "description": "Cette plage exclusive de l'île Giftoun est un véritable paradis. La plage de sable et l'eau turquoise d'Hurghada n'ont pas été appréciées par les touristes pour une raison.",
-      "price": "$38",
+      "price": "$35",
       "duration": "Journée complète",
       "groupSize": "Jusqu'à 25 personnes",
       "availability": "Tous les jours",
@@ -2255,7 +2255,7 @@
     "orange-bay-hurghada": {
       "title": "Orange Bay Hurghada – Maldives égyptiennes",
       "description": "Découvrez Orange Bay Hurghada – une plage paradisiaque connue sous le nom de Maldives égyptiennes ! Croisière vers l'île d'Orange depuis Hurghada : plongée en apnée, déjeuner VIP, sable blanc et eau turquoise.",
-      "price": "$28",
+      "price": "$25",
       "duration": "Journée complète",
       "groupSize": "Jusqu'à 25 personnes",
       "availability": "Tous les jours",
@@ -2377,7 +2377,7 @@
     "parasailing-hurghada": {
       "title": "Parachute ascensionnel Hurghada",
       "description": "Le parachute ascensionnel à Hurghada est un vol en parachute de plusieurs minutes tiré par un hors-bord au-dessus de la mer Rouge. Une attraction à Hurghada qui mérite votre attention.",
-      "price": "$20",
+      "price": "$35",
       "duration": "2 heures",
       "groupSize": "1-2 personnes",
       "availability": "Tous les jours",
@@ -2514,7 +2514,7 @@
     "afternoon-quad-safari-hurghada": {
       "title": "Safari en quad l'après-midi",
       "description": "Randonnée en quad dans le désert du coucher du soleil, balade à dos de chameau et possibilité de visiter un village bédouin au coucher du soleil.",
-      "price": "$20",
+      "price": "$30",
       "duration": "5 heures",
       "groupSize": "Jusqu'à 10 personnes",
       "availability": "Tous les jours",
@@ -2536,7 +2536,7 @@
     "sahara-park-mega-safari": {
       "title": "Parc du Sahara - Méga Safari",
       "description": "Sahara Park depuis Hurghada Excellent voyage pour adultes et enfants. Aventure en jeeps, quads et buggys et visite des Bédouins.",
-      "price": "$23",
+      "price": "$25",
       "duration": "Journée complète",
       "groupSize": "Jusqu'à 20 personnes",
       "availability": "Tous les jours",
@@ -2597,7 +2597,7 @@
     "sindbad-submarine-hurghada": {
       "title": "Sous-marin Sindbad",
       "description": "Hurghada, située sur la côte orientale de la mer Rouge, est l'un des plus beaux endroits pour plonger sans se mouiller.",
-      "price": "$75",
+      "price": "$20",
       "duration": "2 heures",
       "groupSize": "Jusqu'à 40 personnes",
       "availability": "Tous les jours",
@@ -2650,7 +2650,7 @@
     "cairo-trip-from-hurghada": {
       "title": "Excursion au Caire depuis Hurghada",
       "description": "Pour tous les amoureux d'histoire ancienne. Voici un voyage au Caire depuis Hurghada, plein de manifestations de la civilisation des pharaons et des nations anciennes. Pyramides, Sphinx, Musée égyptien...",
-      "price": "$55",
+      "price": "$80",
       "duration": "Journée complète",
       "groupSize": "Jusqu'à 20 personnes",
       "availability": "Tous les jours",
@@ -2732,7 +2732,7 @@
     "luxor-valley-of-kings-hurghada": {
       "title": "Louxor avec la Vallée des Rois",
       "description": "Hurghada est une destination touristique populaire, célèbre pour ses belles plages, ses coraux et ses récifs coralliens paradisiaques. L'une des plus grandes attractions de cette région d'Égypte sont les voyages à Louxor avec la Vallée des Rois.",
-      "price": "$60",
+      "price": "$75",
       "duration": "Journée complète",
       "groupSize": "Jusqu'à 20 personnes",
       "availability": "Tous les jours",
